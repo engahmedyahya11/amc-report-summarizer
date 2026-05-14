@@ -499,4 +499,4 @@ demo.launch(
     server_port=int(os.environ.get("PORT", 7860)),
     css=css,
     theme=gr.themes.Base()
-)))
+)
