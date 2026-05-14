@@ -304,7 +304,7 @@ label, .gr-form label {
 footer { display: none !important; }
 """
 
-with gr.Blocks(css=css, theme=gr.themes.Base()) as demo:
+with gr.Blocks() as demo:
 
     gr.HTML(f"""
     <div style='display:flex;align-items:center;gap:18px;padding:20px 28px;
@@ -464,7 +464,7 @@ with gr.Blocks(css=css, theme=gr.themes.Base()) as demo:
               </div>
             </div>""")
 
-            chatbot = gr.Chatbot(label="", height=400, bubble_full_width=False)
+            chatbot = gr.Chatbot(label="", height=400)
             with gr.Row():
                 chat_input = gr.Textbox(
                     placeholder="Type your question here... (English or Arabic)",
@@ -494,4 +494,9 @@ with gr.Blocks(css=css, theme=gr.themes.Base()) as demo:
     </div>
     """)
 
-demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860)),
+    css=css,
+    theme=gr.themes.Base()
+)))
