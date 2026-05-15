@@ -494,4 +494,4 @@ with gr.Blocks() as demo:
     </div>
     """)
 
-demo.launch(css=css, theme=gr.themes.Base())
+demo.launch(server_name="0.0.0.0", server_port=7860, css=css, theme=gr.themes.Base())
