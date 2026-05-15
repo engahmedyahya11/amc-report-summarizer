@@ -1,4 +1,3 @@
-
 import os
 import json
 import re
@@ -33,7 +32,6 @@ class ClaudeClient:
             messages.append({"role": "user",      "content": user_msg})
             messages.append({"role": "assistant", "content": assistant_msg})
         messages.append({"role": "user", "content": question})
-
         response = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
